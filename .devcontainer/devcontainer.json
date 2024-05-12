@@ -1,5 +1,11 @@
 {
-    "image": "cortexneurons/cuckoosandbox_file_analysis_inet:1"
-
-  }
+    "image": "debian:bullseye-slim",
+    "postCreateCommand": [
+        "apt-get update",
+        "apt-get install -y curl gnupg",
+        "curl -s https://archive.kali.org/kali.gpg | apt-key add -",
+        "echo 'deb http://http.kali.org/kali kali-rolling main contrib non-free' > /etc/apt/sources.list",
+        "apt-get update"
+    ]
+}
   
